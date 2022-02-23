@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.acm_vit.databinding.ActivityProfileBinding
 import com.example.acm_vit.modelclass.User
@@ -49,7 +50,27 @@ class ProfileActivity : AppCompatActivity() {
 
 
     private fun updateProfileData() {
-        TODO("Not yet implemented")
+
+        var firebase: FirebaseUser = FirebaseAuth.getInstance().currentUser!!
+        var databaseReference: DatabaseReference= FirebaseDatabase.getInstance().getReference("Users").child(firebase.uid)
+        databaseReference.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                val hashMap: HashMap<String,String> = HashMap()
+                hashMap["name"]=binding.nameProfile.text.toString()
+                databaseReference.updateChildren(hashMap as Map<String, Any>)
+                Toast.makeText(this@ProfileActivity,"Name Updated", Toast.LENGTH_SHORT).show()
+
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+
+        })
+
     }
 
     private fun loadDataInProfile() {

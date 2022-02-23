@@ -32,9 +32,6 @@ class ChatActivity : AppCompatActivity() {
         //Getting Data From Firebase:
         getUserList()
 
-        binding.refreshButton.setOnClickListener{
-            getUserList()
-        }
 
         binding.profileIcon.setOnClickListener{
             val intent = Intent(this,ProfileActivity::class.java)
