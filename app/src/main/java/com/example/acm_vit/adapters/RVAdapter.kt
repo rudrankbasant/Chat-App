@@ -26,7 +26,7 @@ class RVAdapter(private val context: Context, private val userList: ArrayList<Us
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val user= userList[position]
         holder.name.text=user.name
-        //Glide.with(context).load(user.profileImage).placeholder(R.drawable.profie_image).into(holder.userImg)
+        Glide.with(context).load(user.profileImage).placeholder(R.drawable.profie_image).into(holder.userImg)
         val theName= user.name
 
         holder.userItemLayout.setOnClickListener{

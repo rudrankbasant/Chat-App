@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context=".ChatActivity">
 
 
@@ -11,6 +12,7 @@
         android:id="@+id/userRV"
         android:layout_width="409dp"
         android:layout_height="650dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,15 +33,16 @@
 
     <TextView
         android:id="@+id/userChatName"
-        android:layout_width="250dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginBottom="28dp"
         android:text="Name"
         android:textSize="20dp"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/userRV"
         app:layout_constraintEnd_toStartOf="@+id/profileIcon"
-        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
